@@ -1,0 +1,43 @@
+{
+  "name": "webpack-academy",
+  "version": "1.0.0",
+  "description": "Learning Webpack!",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "webpack-defaults": "webpack-defaults",
+    "webpack-dev-server": "webpack-dev-server --hot",
+    "watch": "yarn build -- --watch",
+    "watch:dev": "yarn watch -- --env.env=dev",
+    "watch:prod": "yarn watch -- --env.env=prod",
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
+    "debug:dev": "yarn debug -- --env.env=dev",
+    "debug:prod": "yarn debug -- --env.env=prod",
+    "build:dev": "yarn webpack-dev-server -- --env.env=dev",
+    "build:dev:bundlebuddy": "yarn build:dev -- --env.addons=bundlebuddy",
+    "build:dev:bundleanalyze": "yarn build:dev -- --env.addons=bundleanalyze",
+    "build:dev:firstplugin": "yarn build:dev -- --env.addons=firstplugin",
+    "build:dev:bundle": "yarn build:dev -- --env.addons=bundlebuddy --env.addons=bundleanalyze",
+    "build:prod": "yarn build -- --env.env=prod",
+    "build:prod:bundlebuddy": "yarn build:prod -- --env.addons=bundlebuddy",
+    "build:prod:bundleanalyze": "yarn build:prod -- --env.addons=bundleanalyze",
+    "build:prod:firstplugin": "yarn build:prod -- --env.addons=firstplugin",
+    "build:prod:bundle": "yarn build:prod -- --env.addons=bundlebuddy --env.addons=bundleanalyze"
+  },
+  "author": "Harry Manchanda",
+  "license": "MIT",
+  "devDependencies": {
+    "bundle-buddy-webpack-plugin": "^0.3.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
